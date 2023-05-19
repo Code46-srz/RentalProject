@@ -1,0 +1,33 @@
+#homePageContainer {
+    margin-top: 50px;
+
+}
+
+.carousel {
+    width: 100%;
+    min-height: 350px;
+}
+
+
+.carousel .carousel-item>img {
+
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.figure .col {
+
+    min-height: 250px;
+    max-width: 300px;
+}
+
+.figure .col-lg-3 {
+    min-width: 500px;
+}
+
+.figure>.img {
+    width: 100%;
+}
