@@ -18,14 +18,14 @@
 }
 
 
-.figure .col {
+.col .figure {
 
     min-height: 250px;
     max-width: 300px;
 }
 
-.figure .col-lg-3 {
-    min-width: 500px;
+.col-lg-4 .figure {
+    min-width: 400px;
 }
 
 .figure>.img {

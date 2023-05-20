@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row" id="rentalProperties">
 
-            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <a href="#">
                     <figure class="figure border border-3  rounded-3 ">
                         <img src="img/rental2.jfif" class="figure-img img-fluid rounded w-100" alt="...">
