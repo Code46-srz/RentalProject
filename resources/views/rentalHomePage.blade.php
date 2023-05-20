@@ -90,19 +90,19 @@
                     </figure>
                 </a>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <figure class="figure border">
                     <img src="img/rental3.jfif" class="figure-img img-fluid rounded w-100" alt="...">
                     <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
                 </figure>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <figure class="figure border">
                     <img src="img/rental4.jfif" class="figure-img img-fluid rounded w-100" alt="...">
                     <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
                 </figure>
             </div>
-            <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <figure class="figure border">
                     <img src="img/rental1.jfif" class="figure-img img-fluid rounded w-100" alt="...">
                     <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
