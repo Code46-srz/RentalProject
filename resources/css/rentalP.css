@@ -4,30 +4,29 @@
 }
 
 .carousel {
+    max-width: 1200px;
+}
+
+.carousel-inner {
+    max-width: 1200px;
+    height: 600px;
+
+}
+
+.carousel-item {
     width: 100%;
-    min-height: 350px;
 }
 
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
 
-.carousel .carousel-item>img {
+}
 
-    max-height: 600px;
-    height: 100%;
+.figure {
     width: 100%;
-
 }
 
-
-.col .figure {
-
-    min-height: 250px;
-    max-width: 300px;
-}
-
-.col-lg-4 .figure {
-    min-width: 400px;
-}
-
-.figure>.img {
+.figure-img {
     width: 100%;
 }
