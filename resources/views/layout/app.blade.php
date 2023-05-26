@@ -9,13 +9,12 @@
     <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/b-2.3.6/datatables.min.css" rel="stylesheet" />
 
     <script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/b-2.3.6/datatables.min.js"></script>
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="rentalProperty.js"></script>
+
     <title>Load Board</title>
     <!-- add vite script -->
-    @vite('resources/css/rentalP.css')
+    @vite(['resources/css/rentalP.css', 'resources/js/app.js'])
+    <!-- add app.scss rentalP.css and app.js in the vit directive -->
+
 </head>
 
 <body>
