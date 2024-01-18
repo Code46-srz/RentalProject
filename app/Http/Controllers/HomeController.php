@@ -27,15 +27,20 @@ class HomeController extends Controller
 
         $initialProperty = Property::findOrFail($id);
         //dd($initialProperty->property_id);
-        $properties = Property::where('property_featured', 1)->limit(12)->get();
+        //where('property_featured,1) and image_location = 'main'
 
+        $properties = Property::where('property_featured', 1)->limit(12)->get();
+/*         foreach ($properties as $property) {
+
+            dd($property->images[0]->image_relation_num, $property->images[0]->image_type, $property->images[0]->image_location, $property->images[0]->image_property_id);
+        } */
+        //dd($properties->images[0]->image_id);
         return view('cityViewer', [
             'initialProperty' => $initialProperty,
             'properties' => $properties,
 
         ]);
     }
-
     /* public function propertyDetails()
     {
         $success =false;

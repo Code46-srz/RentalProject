@@ -1,6 +1,4 @@
-#searchForHomeRow {
-    background-color: aquamarine;
-}
+#searchForHomeRow {}
 
 .figure {
     max-width: 300px;
@@ -13,20 +11,10 @@
     height: 325px;
 }
 
-/*access the figure in the cityviewr file and give it a width of 600px and a height of 400px*/
-
-
-
-
-/*
- * Always set the map height explicitly to define the size of the div element
- * that contains the map.
-*/
 
 #homePageContainer {
-    margin-top: 50px;
-    background-color: none;
-    background-image: url('img/mainBackground.png');
+
+    background-image: url("/public/img/mainBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,4 +47,14 @@
 
 #customB {
     background-color: #6c757d !important;
+}
+
+#logoImg {
+    margin-top: 30px;
+}
+
+#modalLogo {
+    padding-top: 10px;
+    margin-left: 450px;
+    padding-bottom: 10px;
 }

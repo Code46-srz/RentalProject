@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Property;
 
@@ -16,20 +17,19 @@ class PropertyController extends Controller
         //dd($id);
         try {
             $property = Property::findOrFail($id);
+            $Img = Image::where('image_property_id', $id)->get();
 
 
-            //$image = $property->images();
-            //dd($image);
-            //return a view with the property details
             $propertyDetailsHtml = view('propertyDetails', [
                 'property' => $property,
+                'propertyImg' => $Img,
 
             ])->render();
             //return a json response
             return response()->json([
                 'success' => true,
                 'message' => 'Property details retrieved successfully.',
-                'data' => ['property' => $propertyDetailsHtml],
+                'data' => ['property' => $propertyDetailsHtml]
             ]);
         } catch (\Throwable $th) {
             return response()->json([

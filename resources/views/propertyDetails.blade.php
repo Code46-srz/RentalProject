@@ -1,32 +1,50 @@
 <div class="row g-2">
+    @foreach ($propertyImg as $img)
+        @if ($img->image_location == 'main')
+            <div class="col-12 col-md-6 col-lg-6">
+                <img class="detailsMainImage"
+                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $img->image_property_id }}_{{ $img->image_location }}_{{ $img->image_relation_num }}.{{ $img->image_type }}"
+                    alt="Main Image">
+            </div>
+        @endif
+    @endforeach
     <div class="col-12 col-md-6 col-lg-6">
-        <img class="detailsMainImage" src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }} ">
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 gx-2">
         <div class="row g-2">
-            <div class="col-6 mb-2">
-                <img class="sideImages"
-                    src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }} ">
-            </div>
-            <div class="col-6  mb-2">
-                <img class="sideImages"
-                    src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }} ">
+            @php
+                $sideImages = $propertyImg->where('image_location', 'side')->values();
+                $sideImagesCount = $sideImages->count();
+            @endphp
 
-            </div>
-        </div>
-        <div class="row g-2">
-            <div class="col-6 ">
-                <img class="sideImages"
-                    src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }} ">
-            </div>
-            <div class="col-6 gx-2">
-                <img class="sideImages"
-                    src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }} ">
-            </div>
+            @for ($i = 1; $i <= 2; $i++)
+                <div class="col-6 mb-2">
+                    @if ($i <= $sideImagesCount)
+                        <img class="sideImages"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i - 1]->image_property_id }}_{{ $sideImages[$i - 1]->image_location }}_{{ $sideImages[$i - 1]->image_relation_num }}.{{ $sideImages[$i - 1]->image_type }}"
+                            alt="Side Image {{ $i }}">
+                    @else
+                        <img class="sideImages"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/system/no-Image.png"
+                            alt="No image found">
+                    @endif
+                </div>
+            @endfor
+
+            @for ($i = 3; $i <= 4; $i++)
+                <div class="col-6 mb-2">
+                    @if ($i <= $sideImagesCount)
+                        <img class="sideImages"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i - 1]->image_property_id }}_{{ $sideImages[$i - 1]->image_location }}_{{ $sideImages[$i - 1]->image_relation_num }}.{{ $sideImages[$i - 1]->image_type }}"
+                            alt="Side Image {{ $i }}">
+                    @else
+                        <img class="sideImages"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/system/no-Image.png"
+                            alt="No image found">
+                    @endif
+                </div>
+            @endfor
         </div>
     </div>
 </div>
-
 
 
 <div class="row mt-8" id="secondRowDetails">

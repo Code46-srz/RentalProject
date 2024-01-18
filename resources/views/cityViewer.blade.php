@@ -10,8 +10,8 @@
                     <div id="mainPCol" class="col-xs-12 col-md-12 col-lg-12 col-xl-6 no-gutters ">
                         <a href="javascript:void(0);" onclick="initProperty({{ $property->property_id }})">
                             <figure id="city" class="figure shadow p-3 mb-5 bg-body rounded">
-                                <img src="{{ route('image.displayImage', ['id' => $property->images[0]->image_id]) }}"
-                                    alt="Image" class="figure-img img-fluid rounded w-100" style="height: 12vh;">
+                                <img
+                                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}_{{ $property->images[0]->image_relation_num }}.{{ $property->images[0]->image_type }}">
                                 <figcaption class="figure-caption text-end">
                                     <p class="text-end">
                                         House for {{ $property->detail->detail_property_ad_type }}

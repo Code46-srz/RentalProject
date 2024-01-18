@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/images/{id}', [PropertyImageController::class, 'displayImage'])->name('image.displayImage');
 Route::get('/city/{id}/property', [HomeController::class, 'cityViewer'])->name('city.property');
 Route::get('test', [PropertyController::class, 'test']);
