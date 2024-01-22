@@ -44,31 +44,32 @@
     width: 100%;
 }
 
-<<<<<<< Updated upstream .figure-img {
+.figure-img {
     width: 100%;
+}
 
-    =======#customB {
-        background-color: #6c757d !important;
-    }
+#customB {
+    background-color: #6c757d !important;
+}
 
-    #logoImg {
-        margin-top: 30px;
-    }
+#logoImg {
+    margin-top: 30px;
+}
 
-    #modalLogo {
-        padding-top: 10px;
-        margin-left: 450px;
-        padding-bottom: 10px;
-    }
+#modalLogo {
+    padding-top: 10px;
+    margin-left: 450px;
+    padding-bottom: 10px;
+}
 
 
 
-    /* Dashboard css */
-    #dashboardContainer {
-        max-width: 1200px;
-    }
+/* Dashboard css */
+#dashboardContainer {
+    max-width: 1200px;
+}
 
-    #profileView {
-        border: 1px solid green;
-        >>>>>>>Stashed changes
-    }
+#profileView {
+    border: 1px solid green;
+
+}
