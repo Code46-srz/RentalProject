@@ -18,11 +18,10 @@
         <div class="row mx-auto mt-4" id="rentalProperties">
 
             @foreach ($properties as $property)
-                <div id="mainPCol" class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-3  mb-5">
-                    <a href={{ 'city/' . $property->property_id . '/property' }}>{{-- "{{ route('city.property', ['id' => $property->property_id]) }}"> --}}
+                <div id="mainPCol" class="col-12 mb-5">
+                    <a href="{{ route('city.property', ['id' => $property->property_id]) }}">
                         <figure class="figure shadow p-3 mb-5 bg-body rounded">
-                            <img
-                                src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}_{{ $property->images[0]->image_relation_num }}.{{ $property->images[0]->image_type }}">
+                            <img src= "#">{{-- "https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}_{{ $property->images[0]->image_relation_num }}.{{ $property->images[0]->image_type }}"> --}}
 
                             <figcaption class="figure-caption text-end">
                                 <p class="text-end">
