@@ -1,25 +1,27 @@
 <div class="row g-2">
     @foreach ($propertyImg as $img)
-        @if ($img->image_location == 'main')
-            <div class="col-12 col-md-6 col-lg-6">
-                <img class="detailsMainImage"
-                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $img->image_property_id }}_{{ $img->image_location }}_{{ $img->image_relation_num }}.{{ $img->image_type }}"
+        @if ($img->image_type == 'main')
+            <div class="col-12">
+                <img class="detailsMainImage mx-auto"
+                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $img->image_property_id }}_{{ $img->image_type }}{{ $img->image_type_count }}.{{ $img->image_format }}"
                     alt="Main Image">
             </div>
         @endif
     @endforeach
-    <div class="col-12 col-md-6 col-lg-6">
+    <div class="col-12">
         <div class="row g-2">
             @php
-                $sideImages = $propertyImg->where('image_location', 'side')->values();
+                $sideImages = $propertyImg->where('image_type_id', '2')->values();
                 $sideImagesCount = $sideImages->count();
+                //dd($sideImagesCount);
             @endphp
-
-            @for ($i = 1; $i <= 2; $i++)
+            {{-- @dd($sideImagesCount) --}}
+            @for ($i = 0; $i <= 3; $i++)
                 <div class="col-6 mb-2">
-                    @if ($i <= $sideImagesCount)
+                    @if ($i < $sideImagesCount)
+                        {{-- Use $i directly and ensure it's less than $sideImagesCount --}}
                         <img class="sideImages"
-                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i - 1]->image_property_id }}_{{ $sideImages[$i - 1]->image_location }}_{{ $sideImages[$i - 1]->image_relation_num }}.{{ $sideImages[$i - 1]->image_type }}"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i]->image_property_id }}_{{ $sideImages[$i]->image_type }}{{ $sideImages[$i]->image_type_count }}.{{ $sideImages[$i]->image_format }}"
                             alt="Side Image {{ $i }}">
                     @else
                         <img class="sideImages"
@@ -29,19 +31,7 @@
                 </div>
             @endfor
 
-            @for ($i = 3; $i <= 4; $i++)
-                <div class="col-6 mb-2">
-                    @if ($i <= $sideImagesCount)
-                        <img class="sideImages"
-                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i - 1]->image_property_id }}_{{ $sideImages[$i - 1]->image_location }}_{{ $sideImages[$i - 1]->image_relation_num }}.{{ $sideImages[$i - 1]->image_type }}"
-                            alt="Side Image {{ $i }}">
-                    @else
-                        <img class="sideImages"
-                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/system/no-Image.png"
-                            alt="No image found">
-                    @endif
-                </div>
-            @endfor
+
         </div>
     </div>
 </div>
@@ -52,17 +42,21 @@
     <div class="col-12 col-md-8 col-lg-8" id="mainC1">
         <div class="row g-2" id="row1">
             <div class="col-12 col-md-6 col-lg-6 " id="detailsSection1">
-                <h1>${{ number_format($property->property_price) }}</h1>
+                <h1><strong>${{ number_format($property->property_price) }}</strong></h1>
+                <br>
                 <h2>{{ $property->property_address }}</h2>
                 <span class="badge mt-4" id="estimate">
-                    ${{ number_format(floor(intval($property->property_price) / 12)) }}/mo
-                    Get pre-qualified
+                    <strong> ${{ number_format(floor(intval($property->property_price) / 12)) }}/mo Get
+                        pre-qualified</strong>
+
                 </span>
+                {{-- $property->agent->agent_lastname --}}
             </div>
             <div class="class-12 col-md-6 col-lg-6" id="detailsSection2">
-                <h2>{{ $property->detail->detail_num_bed }} beds | {{ $property->detail->detail_num_bath }} baths |
+                <h2 class="modalDetails">{{ $property->detail->detail_num_bed }} beds |
+                    {{ $property->detail->detail_num_bath }} baths |
                     {{ $property->detail->detail_sqft }} sqft</h2>
-                <h2>House for {{ $property->detail->detail_property_ad_type }}</h2>
+                <h2 class="modalAdType">House for {{ $property->detail->detail_property_ad_type }}</h2>
             </div>
         </div>
         <!-- mainC1 section2 -->
@@ -115,8 +109,7 @@
 
             </div>
         </div>
-        <h2>{{ $property->agent->agent_company }}</h2>
-        {{ $property->agent->agent_lastname }}</h2>
+        <h2 class="detailsPropertyACompany">{{ $property->agent->agent_company }}</h2>
     </div>
 
 

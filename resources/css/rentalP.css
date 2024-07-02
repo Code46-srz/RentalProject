@@ -1,19 +1,189 @@
+/*holup css */
 #searchForHomeRow {}
 
-.figure {
-    /*max-width: 300px;
-    height: 325px;*/
+/* Base font size for figcaption elements */
+figcaption p,
+figcaption h5,
+figcaption small {
+    font-size: 16px;
+    /* Example base size; adjust as needed */
+    color: black;
+}
+
+.price {
+    font-weight: 900;
+    color: black;
+}
+
+.fig-img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+/* Example media query if adjustments are needed for smaller screens */
+@media (max-width: 768px) {
+
+    figcaption p,
+    figcaption h5 {
+        font-size: 16px;
+        /* Keeps the font size the same under 768px width */
+    }
+
+    .figure-caption {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    figcaption small {
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+
+/* Adjustments for medium screens (>=768px and <992px) */
+/*applies changes to multiple pages */
+@media (min-width: 768px) and (max-width: 991px) {
+    .pAddress {
+        width: 150px;
+        /* Adjust based on your layout needs */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    #row1 h1 {
+        font-size: 20px;
+    }
+
+    #estimate strong {
+        font-size: 10px;
+    }
+
+    #row1 h2 {
+        font-size: 10px;
+    }
+
+    #row1 .modalDetails .modalAdType {
+        font-size: 20px;
+    }
+
+    #mainC2 a {
+        font-size: 10px;
+    }
+
+    .detailsPropertyACompany {
+        font-size: 5px;
+        font-family: monospace;
+    }
+
+    #mainC1 .alert {
+        font-size: 12px;
+        padding: 0px;
+    }
+
+    #modalLogo {
+        width: 100px;
+    }
+}
+
+/* Adjustments for large screens and up (>=992px) */
+@media (min-width: 992px) {
+
+    figcaption p,
+    figcaption h5 {
+        font-size: 10px;
+    }
+
+    figcaption small {
+        font-size: 6px;
+    }
+
+    .fig-img-fluid {
+        width: 200px;
+        height: 100px;
+    }
+
+    .pAddress {
+        width: 180px;
+        /* Adjusted for consistency */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .figure-caption {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+
+    figcaption p,
+    figcaption h5 {
+        font-size: 10px;
+    }
+
+    .pAddress {
+        font-size: 8px;
+    }
+
+    figcaption small {
+        font-size: 6px;
+    }
+
+    .fig-img-fluid {
+        width: 200px;
+        height: 100px;
+    }
+
+    .fig-big-screen {
+        height: 300px !important;
+    }
+
+    .figure-caption {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1280px) {
+
+    figcaption p,
+    figcaption h5 {
+        font-size: 10px;
+    }
+
+    .pAddress {
+        font-size: 8px;
+        width: 130px;
+    }
+
+    figcaption small {
+        font-size: 5px;
+    }
+
+    .fig-img-fluid {
+        width: 200px;
+        height: 100px;
+    }
+
+    .fig-big-screen {
+        height: 300px !important;
+    }
+
+    .figure-caption {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 
 #city {
     max-width: 400px;
-
     height: 325px;
 }
 
-
 #homePageContainer {
-
     background-image: url("/public/img/mainBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,10 +214,6 @@
     width: 100%;
 }
 
-.figure-img {
-    width: 100%;
-}
-
 #customB {
     background-color: #6c757d !important;
 }
@@ -58,11 +224,8 @@
 
 #modalLogo {
     padding-top: 10px;
-    margin-left: 450px;
     padding-bottom: 10px;
 }
-
-
 
 /* Dashboard css */
 #dashboardContainer {
@@ -71,5 +234,21 @@
 
 #profileView {
     border: 1px solid green;
+}
 
+/*property details modal css*/
+
+.detailsPropertyACompany {
+    font-size: 12px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*modal css */
+
+.btn-close {
+    color: black;
+}
+
+.detailsMainImage {
+    height: 400px;
 }

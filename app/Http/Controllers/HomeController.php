@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $properties = Property::where('property_featured', 1)->limit(8)->get();
-
+        //debug to see the properties
         return view('rentalHomePage', [
             'properties' => $properties,
         ]);
@@ -30,7 +30,7 @@ class HomeController extends Controller
         //where('property_featured,1) and image_location = 'main'
 
         $properties = Property::where('property_featured', 1)->limit(12)->get();
-/*         foreach ($properties as $property) {
+        /*         foreach ($properties as $property) {
 
             dd($property->images[0]->image_relation_num, $property->images[0]->image_type, $property->images[0]->image_location, $property->images[0]->image_property_id);
         } */

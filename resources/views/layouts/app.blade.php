@@ -50,18 +50,18 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="container-fluid p-0 m-0">
 
             {{ $slot }}
         </main>
     </div>
     <div class="modal" id="propertyModal" tabindex="-1">
-        <div class="modal-dialog  modal-xl">
+        <div class="modal-dialog  modal-lg">
             <div class="modal-content">
                 <div class="modal-header p-0">
                     <img id="modalLogo" src="https://macbuckets46.s3.us-west-2.amazonaws.com/system/willowLogoSmall.png"
                         alt="" srcset="" height="200" width="200">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <div class="modal-body">
 

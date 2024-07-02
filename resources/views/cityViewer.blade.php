@@ -1,10 +1,10 @@
 <x-app-layout>
     <div class="row" style="overflow-y:hidden">
-        <div id="mapContainer" class="col-7">
+        <div id="mapContainer" class="col-12 col-md-6 col-lg-8">
             <div id="map" style="height: 100vh;"></div>
         </div>
 
-        <div class="col-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5 " style="height: 100vh; overflow-y: auto;">
+        <div class="col-12 col-md-6 col-lg-4" style="height: 100vh; overflow-y: auto;">
             <div class="row">
                 @foreach ($properties as $property)
                     <div id="mainPCol" class="col-xs-12 col-md-12 col-lg-12 col-xl-6 no-gutters ">

@@ -19,7 +19,6 @@ class PropertyController extends Controller
             $property = Property::findOrFail($id);
             $Img = Image::where('image_property_id', $id)->get();
 
-
             $propertyDetailsHtml = view('propertyDetails', [
                 'property' => $property,
                 'propertyImg' => $Img,
