@@ -55,7 +55,7 @@
             {{ $slot }}
         </main>
     </div>
-    <div class="modal" id="propertyModal" tabindex="-1">
+    <div class="modal" id="propertyModal" tabindex="-1" style="height: 100%">
         <div class="modal-dialog  modal-lg">
             <div class="modal-content">
                 <div class="modal-header p-0">

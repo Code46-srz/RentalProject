@@ -42,7 +42,8 @@
             @endif
 
             <x-primary-button class="ml-3">
-                {{ __('Log in') }}
+                {{-- __('Log in') --}}
+                Log in not available
             </x-primary-button>
         </div>
     </form>

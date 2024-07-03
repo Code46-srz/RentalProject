@@ -84,6 +84,10 @@ figcaption small {
     #modalLogo {
         width: 100px;
     }
+
+    .sideImages {
+        height: 100px;
+    }
 }
 
 /* Adjustments for large screens and up (>=992px) */
@@ -115,6 +119,7 @@ figcaption small {
         margin-left: 5px;
         margin-right: 5px;
     }
+
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -184,7 +189,7 @@ figcaption small {
 }
 
 #homePageContainer {
-    background-image: url("/public/img/mainBackground.png");
+    background-image: url("/public/img/willowHome.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -218,9 +223,7 @@ figcaption small {
     background-color: #6c757d !important;
 }
 
-#logoImg {
-    margin-top: 30px;
-}
+#logoImg {}
 
 #modalLogo {
     padding-top: 10px;
@@ -251,4 +254,12 @@ figcaption small {
 
 .detailsMainImage {
     height: 400px;
+}
+
+#mapContainer,
+#propertiesSide {
+    height: calc(100vh - 60px);
+    /* Adjust 60px to the actual combined height of other elements */
+    overflow-y: auto;
+    /* For #propertiesSide */
 }

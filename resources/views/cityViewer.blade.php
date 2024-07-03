@@ -1,17 +1,45 @@
 <x-app-layout>
-    <div class="row" style="overflow-y:hidden">
-        <div id="mapContainer" class="col-12 col-md-6 col-lg-8">
-            <div id="map" style="height: 100vh;"></div>
+    <div id="cityViewerContainer" class="row m-0">
+        <div id="mapContainer" class="col-12 col-md-6 col-lg-8 pr-0 pl-0"> {{-- style="height: 100vh"> --}}
+            <div id="map" style="height: 100%;"></div>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4" style="height: 100vh; overflow-y: auto;">
+        <div id = "propertiesSide" class="col-12 col-md-6 col-lg-4">
             <div class="row">
                 @foreach ($properties as $property)
-                    <div id="mainPCol" class="col-xs-12 col-md-12 col-lg-12 col-xl-6 no-gutters ">
+                    <div id="mainPCol" class="col-xs-12 col-md-6 col-lg-6 col-xl-6 no-gutters mx-auto mb-1"
+                        style="overflow-y:hidden;">
                         <a href="javascript:void(0);" onclick="initProperty({{ $property->property_id }})">
-                            <figure id="city" class="figure shadow p-3 mb-5 bg-body rounded">
+                            <figure class="figure shadow bg-body rounded">
+                                <img src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_count }}.{{ $property->images[0]->image_format }}"
+                                    class="fig-img-fluid">
+
+                                <figcaption class="figure-caption p-0 text-end " id="fig-big-screen">
+                                    <p class="text-end">
+                                        House for {{ $property->detail->detail_property_ad_type }}
+                                    </p>
+                                    <!-- make this h5 float to the left -->
+                                    <h5 class="float-start">
+                                        <p class="price">${{ number_format($property->property_price) }}
+                                        </p>
+                                    </h5>
+                                    <br>
+                                    <p> <strong>{{ $property->detail->detail_num_bed }}</strong> beds |
+                                        <strong>{{ $property->detail->detail_num_bath }}</strong> baths |
+                                        {{ $property->detail->detail_sqft }} sqft
+                                    </p>
+
+                                    <p class="pAddress">{{ $property->property_address }}</p>
+
+                                    <small>{{ $property->agent->agent_company }},
+                                        {{ $property->agent->agent_firstname }}
+                                        {{ $property->agent->agent_lastname }}</small>
+
+                                </figcaption>
+                            </figure>
+                            {{-- <figure id="city" class="figure shadow p-3 mb-5 bg-body rounded">
                                 <img
-                                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}_{{ $property->images[0]->image_relation_num }}.{{ $property->images[0]->image_type }}">
+                                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_count }}.{{ $property->images[0]->image_format }}">
                                 <figcaption class="figure-caption text-end">
                                     <p class="text-end">
                                         House for {{ $property->detail->detail_property_ad_type }}
@@ -33,7 +61,7 @@
                                     {{ $property->agent->agent_lastname }}
 
                                 </figcaption>
-                            </figure>
+                            </figure> --}}
                         </a>
                     </div>
                 @endforeach

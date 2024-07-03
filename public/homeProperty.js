@@ -26,3 +26,13 @@ async function initMap() {
 
 
 initMap();
+
+$('#showRent').click(function () {
+    $('.property').hide(); // Hide all properties
+    $('.property[data-home-type="rent"]').show(); // Show only rent properties
+});
+
+$('#showBuy').click(function () {
+    $('.property').hide(); // Hide all properties
+    $('.property[data-home-type="sale"]').show(); // Show only buy properties
+});
