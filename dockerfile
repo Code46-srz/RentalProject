@@ -26,7 +26,7 @@ RUN npm install && npm run build
 
 # Set an environment variable for the port
 ENV PORT=8000
-
+EXPOSE 8000
 # Set the entrypoint script
 ENTRYPOINT ["docker/entrypoint.sh"]
 

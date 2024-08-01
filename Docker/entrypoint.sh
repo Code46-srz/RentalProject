@@ -1,6 +1,4 @@
 #!/bin/bash
-echo "PORT environment variable is set to: $PORT"
-
 if [ ! -f "vendor/autoload.php" ]; then
     composer install --no-progress --no-interaction
 fi
@@ -18,5 +16,5 @@ php artisan cache:clear
 php artisan config:clear
 php aritsan route:clear
 
-php artisan serve --port=${PORT:-8000} --host=0.0.0.0 --env=.env
+php artisan serve --port=$PORT --host=0.0.0.0 --env=.env
 exec docker-php-entrypoint "$@"
