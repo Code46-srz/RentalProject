@@ -26,7 +26,7 @@ RUN npm install && npm run build
 
 # Set an environment variable for the port
 ENV PORT=8000
-
+EXPOSE 8000
 # define host
 ENV HOST=0.0.0.0
 # Set the entrypoint script
