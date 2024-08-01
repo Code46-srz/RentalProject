@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "PORT environment variable is set to: $PORT"
+
 if [ ! -f "vendor/autoload.php" ]; then
     composer install --no-progress --no-interaction
 fi
