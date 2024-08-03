@@ -34,7 +34,7 @@ ENV PORT=8000
 EXPOSE 8000
 
 # Copy and set permissions for the entrypoint script
-COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY Docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # Define entrypoint
