@@ -17,7 +17,7 @@ COPY . .
 COPY --from=composer:2.7.1 /usr/bin/composer /usr/bin/composer
 
 # Install PHP dependencies with Composer
-RUN composer install
+RUN composer install --no-progress --no-interaction
 
 # Install Node.js (including npm)
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
@@ -33,8 +33,12 @@ RUN npm install && npm run build
 ENV PORT=8000
 EXPOSE 8000
 
+# Copy and set permissions for the entrypoint script
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Define entrypoint
-ENTRYPOINT ["docker/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 #====================================================================================================#
 # Node.js stage
@@ -50,4 +54,4 @@ COPY . .
 RUN npm install --global cross-env vite
 
 # Define volumes
-VOLUME [ "/var/www/node_modules" ]
+VOLUME ["/var/www/node_modules"]
