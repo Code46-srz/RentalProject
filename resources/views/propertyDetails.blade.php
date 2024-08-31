@@ -3,7 +3,7 @@
         @if ($img->image_type == 'main')
             <div class="col-12">
                 <img class="detailsMainImage mx-auto"
-                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $img->image_property_id }}_{{ $img->image_type }}{{ $img->image_type_count }}.{{ $img->image_format }}"
+                    src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $img->image_property_id }}_{{ $img->image_type }}{{ $img->image_type_id }}.{{ $img->image_format }}"
                     alt="Main Image">
             </div>
         @endif
@@ -21,7 +21,7 @@
                     @if ($i < $sideImagesCount)
                         {{-- Use $i directly and ensure it's less than $sideImagesCount --}}
                         <img class="sideImages"
-                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i]->image_property_id }}_{{ $sideImages[$i]->image_type }}{{ $sideImages[$i]->image_type_count }}.{{ $sideImages[$i]->image_format }}"
+                            src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $sideImages[$i]->image_property_id }}_{{ $sideImages[$i]->image_type }}{{ $sideImages[$i]->image_type_id }}.{{ $sideImages[$i]->image_format }}"
                             alt="Side Image {{ $i }}">
                     @else
                         <img class="sideImages"

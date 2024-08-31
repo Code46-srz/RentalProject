@@ -1,46 +1,47 @@
-version: '3'
+version: '3.8'
+
 services:
-    #PHP Service
     php:
         build:
             context: .
-            target: php
-            args:
-                - APP_ENV=$(APP_ENV)
-        environment:
-            - APP_ENV=$(APP_ENV)
-            - CONTAINER_ROLE=app
-            - DB_HOST=database
-            - DB_PORT=3306
-
-        working_dir: /var/www
+            dockerfile: Dockerfile.php-fpm
+        container_name: php-fpm
+        env_file:
+            - .env.production
         volumes:
-            - ./:/var/www
-        ports:
-            - 8000:8000
-        depends_on:
-            - database
-    #database server
+            - ./public:/var/www/html/public
+        networks:
+            - rentalProject-api-network
 
-    database:
-        image: mysql:8.0
-        ports:
-            - "3307:3306"
-        environment:
-            - MYSQL_DATABASE=${DB_DATABASE}
-            - MYSQL_USER=${DB_USERNAME}
-            - MYSQL_PASSWORD=${DB_PASSWORD}
-            - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-        volumes:
-            - db_data:/var/lib/mysql
-
-    node:
+    web-server:
         build:
             context: .
-            target: node
+            dockerfile: Dockerfile.nginx
+        container_name: web-server
+        ports:
+            - "8080:80"
         volumes:
-            - ./:/urs/src
-            - ./node_modules:/usr/src/node_modules
-        tty: true
+            - ./public:/var/www/html/public
+        networks:
+            - rentalProject-api-network
+
+    mysql:
+        image: mysql:latest
+        container_name: mysql_container
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: rentalProject
+            MYSQL_USER: rentalProject
+            MYSQL_PASSWORD: secret
+        volumes:
+            - mysql_data:/var/lib/mysql
+            - ./dumps:/docker-entrypoint-initdb.d
+        networks:
+            - rentalProject-api-network
+
 volumes:
-    db_data: ~
+    mysql_data:
+
+
+networks:
+    rentalProject-api-network:

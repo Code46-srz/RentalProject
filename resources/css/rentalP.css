@@ -19,7 +19,10 @@ figcaption small {
     width: 100%;
     height: auto;
 }
-
+.pAddress {
+    font-size: 15px;
+    color: gray;
+}
 /* Example media query if adjustments are needed for smaller screens */
 @media (max-width: 768px) {
 
@@ -93,9 +96,13 @@ figcaption small {
 /* Adjustments for large screens and up (>=992px) */
 @media (min-width: 992px) {
 
-    figcaption p,
     figcaption h5 {
-        font-size: 10px;
+        font-size: 20px;
+    }
+
+    figcaption p{
+        font-size: 14px;
+
     }
 
     figcaption small {
@@ -103,8 +110,8 @@ figcaption small {
     }
 
     .fig-img-fluid {
-        width: 200px;
-        height: 100px;
+        width: 500px;
+        height: 150px;
     }
 
     .pAddress {
@@ -223,7 +230,10 @@ figcaption small {
     background-color: #6c757d !important;
 }
 
-#logoImg {}
+#logoImg {
+    /*center image vertically using margin */
+    margin-top: 10px;
+}
 
 #modalLogo {
     padding-top: 10px;
