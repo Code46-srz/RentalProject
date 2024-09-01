@@ -19,7 +19,7 @@ services:
             dockerfile: Dockerfile.nginx
         container_name: web-server
         ports:
-            - "${PORT:-8080}:8080"
+            - "8080:80"
         volumes:
             - ./public:/var/www/html/public
         networks:
