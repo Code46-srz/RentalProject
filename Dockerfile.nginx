@@ -5,8 +5,7 @@ ARG PORT
 COPY ./laravel.conf /etc/nginx/conf.d/default.conf
 
 
-# Make the entrypoint script executable
-RUN chmod +x /usr/local/bin/entrypoint.sh
+
 
 
 
