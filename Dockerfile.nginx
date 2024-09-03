@@ -5,7 +5,7 @@ FROM nginx:1.24.0-alpine-slim
 COPY ./laravel.conf /etc/nginx/conf.d/default.conf
 
 # Copy the entrypoint script
-COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
+#COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 
 ENV PORT = 8080
 CMD ["nginx", "-g", "daemon off;"]
