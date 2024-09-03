@@ -32,6 +32,12 @@ RUN composer install
 RUN npm install
 RUN npm run build
 
+# make deploy script executable
+RUN chmod +x /var/www/html/deploy.sh
+
+# run deploy script
+RUN /var/www/html/deploy.sh
+
 
 # Switch back to root user if necessary
 USER root
