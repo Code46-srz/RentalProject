@@ -1,0 +1,37 @@
+# Get the official images
+FROM composer:2.7.7 AS composer
+FROM php:8.3.3-fpm-alpine3.19
+
+# Add the install-php-extensions script
+ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
+# Install the follwoing php extensions Ctype,curl,dom,fileinfo,filter,hash,mbstring,openssl, pcre, pdo, pdo_mysql, phar, posix, readline, session, SimpleXML, tokenizer, xml, xmlwriter, zlib
+RUN install-php-extensions ctype curl dom fileinfo filter hash mbstring openssl pcre pdo pdo_mysql phar posix readline session SimpleXML tokenizer xml xmlwriter zlib
+
+# Install required packages
+RUN apk add --no-cache nodejs npm
+
+# Copy your custom php.ini to the correct location in the container
+#COPY php.ini /usr/local/etc/php/php.ini
+
+# Copy project files
+COPY --chown=www-data:www-data . /var/www/html
+
+# Copy Composer from the previous stage
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Ensure permissions are set correctly
+RUN chmod -R 755 /var/www/html/public/
+USER www-data
+
+# Composer run commands
+RUN composer update
+RUN composer install
+
+# npm run commands
+RUN npm install
+RUN npm run build
+
+
+# Switch back to root user if necessary
+USER root

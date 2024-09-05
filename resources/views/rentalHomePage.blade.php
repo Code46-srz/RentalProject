@@ -19,11 +19,11 @@
         <div class="row mx-auto mt-4" id="rentalProperties">
 
             @foreach ($properties as $property)
-                <div id="mainPCol" class="col-12 col-md-3 col-lg-2 mb-5 property"
+                <div id="mainPCol" class="col-12 col-md-3 col-lg-3 mb-5 property"
                     data-home-type={{ $property->detail->detail_property_ad_type }}>
                     <a href="{{ route('city.property', ['id' => $property->property_id]) }}">
                         <figure class="figure shadow bg-body rounded">
-                            <img src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_count }}.{{ $property->images[0]->image_format }}"
+                            <img src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_id}}.{{ $property->images[0]->image_format }}"
                                 class="fig-img-fluid">
 
                             <figcaption class="figure-caption p-0 text-end " id="fig-big-screen">
@@ -43,7 +43,7 @@
 
                                 <p class="pAddress">{{ $property->property_address }}</p>
 
-                                <small>{{ $property->agent->agent_company }},
+                                <small class="agency">{{ $property->agent->agent_company }},
                                     {{ $property->agent->agent_firstname }}
                                     {{ $property->agent->agent_lastname }}</small>
 

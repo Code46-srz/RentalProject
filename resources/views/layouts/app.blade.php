@@ -23,15 +23,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <!--- custom js -->
-    <script type="module" src="{{ asset('homeProperty.js') }}"></script>
     <!--polyfill for IE11 -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- fontawsome -->
     <script src="https://kit.fontawesome.com/760ccaf1ef.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @vite(['resources/css/rentalP.css', 'resources/js/app.js'])
+<!-- Scripts -->
+@vite(['resources/css/app.css', 'resources/css/rentalP.css', 'resources/js/app.js', 'resources/js/homeProperty.js'])
+
+
 </head>
 
 <body class="font-sans antialiased">
@@ -61,7 +61,7 @@
                 <div class="modal-header p-0">
                     <img id="modalLogo" src="https://macbuckets46.s3.us-west-2.amazonaws.com/system/willowLogoSmall.png"
                         alt="" srcset="" height="200" width="200">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 

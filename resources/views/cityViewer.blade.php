@@ -11,7 +11,7 @@
                         style="overflow-y:hidden;">
                         <a href="javascript:void(0);" onclick="initProperty({{ $property->property_id }})">
                             <figure class="figure shadow bg-body rounded">
-                                <img src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_count }}.{{ $property->images[0]->image_format }}"
+                                <img src="https://macbuckets46.s3.us-west-2.amazonaws.com/property_{{ $property->images[0]->image_property_id }}_{{ $property->images[0]->image_location }}{{ $property->images[0]->image_type }}{{ $property->images[0]->image_type_id}}.{{ $property->images[0]->image_format }}"
                                     class="fig-img-fluid">
 
                                 <figcaption class="figure-caption p-0 text-end " id="fig-big-screen">
