@@ -26,10 +26,11 @@ USER www-data
 
 # Composer run commands
 RUN composer update
-RUN composer install
+RUN composer install 
+#minimize the amount of files produced for production 
 
 # npm run commands
-RUN npm install
+RUN npm install 
 RUN npm run build
 
 
