@@ -1,0 +1,31 @@
+{
+  "public/img/willowHome.jpg": {
+    "file": "assets/willowHome-4f601a60.jpg",
+    "src": "public/img/willowHome.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-a3182549.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/rentalP.css": {
+    "file": "assets/rentalP-44c03a4a.css",
+    "isEntry": true,
+    "src": "resources/css/rentalP.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-b8986a79.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/homeProperty.js": {
+    "file": "assets/homeProperty-fc48f827.js",
+    "isEntry": true,
+    "src": "resources/js/homeProperty.js"
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-cb41d22e.css",
+    "isEntry": true,
+    "src": "resources/scss/app.scss"
+  }
+}
