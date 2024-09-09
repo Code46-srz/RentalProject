@@ -9,7 +9,6 @@ services:
         env_file:
             - .env.production
         volumes:
-            - .:/var/www/html
             - ./public:/var/www/html/public
         networks:
             - rentalProject-api-network
