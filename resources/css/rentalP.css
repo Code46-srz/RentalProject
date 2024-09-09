@@ -26,6 +26,10 @@ figcaption small {
 /* Example media query if adjustments are needed for smaller screens */
 @media (max-width: 768px) {
 
+    figure{
+        width: 350px;
+        max-width: 350px;
+    }
     figcaption p,
     figcaption h5 {
         font-size: 16px;
@@ -87,9 +91,30 @@ figcaption small {
     #modalLogo {
         width: 100px;
     }
+    figure{
+        width:150px;
 
+    }
+    .fig-img-fluid{
+        width: 150px;
+        height: 100px;
+    }
+    .text-end {
+        font-size: 10px;
+    }
+    figcaption{
+        font-size: 10px;
+    }
+    .agency{
+        font-size: 8px;
+    }
+    figcaption p{
+        font-size: 10px;
+    }
     .sideImages {
         height: 100px;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -105,8 +130,8 @@ figcaption small {
 
     }
 
-    figcaption small {
-        font-size: 6px;
+    .agency {
+        font-size: 10px;
     }
 
     .fig-img-fluid {
@@ -126,9 +151,14 @@ figcaption small {
         margin-left: 5px;
         margin-right: 5px;
     }
+        .sideImages {
+        height: 100px;
+        width: 100%;
+        object-fit: cover;
+    }
 
 }
-
+/* for sizes between 768px and 991px */
 @media (min-width: 769px) and (max-width: 991px) {
 
     figcaption p,
@@ -140,12 +170,12 @@ figcaption small {
         font-size: 8px;
     }
 
-    figcaption small {
+    .agency {
         font-size: 6px;
     }
 
     .fig-img-fluid {
-        width: 200px;
+        width: 350px;
         height: 100px;
     }
 
@@ -171,12 +201,9 @@ figcaption small {
         width: 130px;
     }
 
-    figcaption small {
-        font-size: 5px;
-    }
 
     .fig-img-fluid {
-        width: 200px;
+        width: 350px;
         height: 100px;
     }
 
@@ -187,6 +214,9 @@ figcaption small {
     .figure-caption {
         margin-left: 5px;
         margin-right: 5px;
+    }
+    .agency{
+        font-size: 6px;
     }
 }
 

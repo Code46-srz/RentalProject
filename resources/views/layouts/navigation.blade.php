@@ -92,11 +92,13 @@
 
      <!-- Responsive Navigation Menu -->
      <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+        @auth
          <div class="pt-2 pb-3 space-y-1">
              <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                  {{ __('Dashboard') }}
              </x-responsive-nav-link>
          </div>
+         @endauth
 
          <!-- Responsive Settings Options for mobile navigation -->
          <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
@@ -108,6 +110,7 @@
              </div>
 
              <div class="mt-3 space-y-1">
+                @auth
                  <x-responsive-nav-link :href="route('profile.edit')">
                      {{ __('Profile') }}
                  </x-responsive-nav-link>
@@ -122,6 +125,19 @@
                          {{ __('Log Out') }}
                      </x-responsive-nav-link>
                  </form>
+                 @endauth
+                     <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                         {{ __('Register') }}
+                     </x-responsive-nav-link>
+                     <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                         {{ __('Login') }}
+                     </x-responsive-nav-link>
+                     <x-responsive-nav-link id="showRent" {{-- :href="route('rent')" :active="request()->routeIs('about')" --}}>
+                         {{ __('Rent') }}
+                     </x-responsive-nav-link>
+                     <x-responsive-nav-link id="showBuy" {{-- :href="route('buy')" :active="request()->routeIs('about')" --}}>
+                         {{ __('Buy') }}
+                     </x-responsive-nav-link>
              </div>
          </div>
      </div>

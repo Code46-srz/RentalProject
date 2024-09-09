@@ -31,7 +31,7 @@
 
                                     <p class="pAddress">{{ $property->property_address }}</p>
 
-                                    <small>{{ $property->agent->agent_company }},
+                                    <small class="agency">{{ $property->agent->agent_company }},
                                         {{ $property->agent->agent_firstname }}
                                         {{ $property->agent->agent_lastname }}</small>
 

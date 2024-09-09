@@ -11,7 +11,9 @@
     <div class="col-12">
         <div class="row g-2">
             @php
-                $sideImages = $propertyImg->where('image_type_id', '2')->values();
+               // $sideImages = $propertyImg->where('image_type_id', '2')->values();
+               // get the side images where image_type is 'side'
+                $sideImages = $propertyImg->where('image_type', 'side')->values();
                 $sideImagesCount = $sideImages->count();
                 //dd($sideImagesCount);
             @endphp

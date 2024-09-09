@@ -9,6 +9,7 @@ services:
         env_file:
             - .env.production
         volumes:
+            - .:/var/www/html
             - ./public:/var/www/html/public
         networks:
             - rentalProject-api-network
@@ -46,8 +47,7 @@ services:
         volumes:
             - mysql_data:/var/lib/mysql
             - ./dumps:/docker-entrypoint-initdb.d
-        ports:
-        - "3306:3306"  
+
         command: --log-error-verbosity=3  # Increase logging verbosity
         networks:
             - rentalProject-api-network
