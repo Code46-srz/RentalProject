@@ -87,4 +87,23 @@ class HomeController extends Controller
             'data' => $data,
         ]);
     }
+    public function websiteDetails()
+    {
+        try {
+            $webDetailsHtml = view('webSiteDetails')->render();
+            //return a json response
+            //dd($webDetailsHtml);
+            return response()->json([
+                'success' => true,
+                'message' => 'Website details retrieved successfully.',
+                'data' => ['websiteDetails' => $webDetailsHtml]
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Property details could not be retrieved successfully.',
+                'data' => ["error" => $th->getMessage()],
+            ]);
+        }
+    }
 }

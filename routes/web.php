@@ -31,6 +31,7 @@ Route::get('/buy', [HomeController::class, 'buy'])->name('buy');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/web/details', [HomeController::class, 'websiteDetails'])->name('website.details');
 
 Route::get('/datatable', [HomeController::class, 'datatable'])->name('datatable');
 Route::get('/datatable/getdata', [HomeController::class, 'getPosts']);

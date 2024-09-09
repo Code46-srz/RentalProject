@@ -54,13 +54,28 @@
             @endforeach
         </div>
 
-        {{--         <div class="row">
-            <div class="col col-sm-12 col-md-3">
+        <script>
+            $(document).ready(function() {
 
-            </div>
-            <div class="col col-sm-12 col-md-3"></div>
-            <div class="col col-sm-12 col-md-3"></div>
-        </div>
-    </div> --}}
+                initWebsiteDetails();
+            });
 
+            function initWebsiteDetails() {
+                $.ajax({
+                    url: '/web/details',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response.success);
+                        $('.modal-body').html(response.data.websiteDetails);
+                        $('#propertyModal').modal('show');
+                    },
+                    error: function(error) {
+                        console.log(response.success);
+                        $('.modal-body').html(response.data.websiteDetails);
+                        $('#propertyModal').modal('show');
+                    }
+                });
+            }
+            </script>
 </x-app-layout>
