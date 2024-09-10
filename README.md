@@ -7,5 +7,5 @@ at the moment.
 The Gif looks a little weird something about ffmpeg mp4 to gif conversion causing some sort of odd patterns also the website does adapt 
 to different screen sizes since it uses bootstraps row and column system. 
 Here is a GIF demonstrating the website in its early stages!
-![Willow Preview](demoImages/willow.gif)
+![Willow Preview](demoImages/WilloDemo1.png)
 
